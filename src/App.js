@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import List from './components/list';
-import withListLoading from './components/withListLoading';
+import List from './components/git-repo-list/list';
+import withListLoading from './components/git-repo-list/withListLoading';
+import ShoppingList from './components/tut1/shoppingList';
+
 function App() {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
     loading: false,
     repos: null,
   });
+  
 
   useEffect(() => {
     setAppState({ loading: true });
@@ -33,6 +36,7 @@ function App() {
             💚
           </span>{' '}
           with by Sanket
+          <ShoppingList name="Sanket" />
         </div>
       </footer>
     </div>

@@ -10,6 +10,7 @@ const List = (props) => {
           <li key={repo.id} className='list'>
             <span className='repo-text'>{repo.name} </span>
             <span className='repo-description'>{repo.description}</span>
+            <span className='repo-description'>{repo.email}</span>
           </li>
         );
       })}
