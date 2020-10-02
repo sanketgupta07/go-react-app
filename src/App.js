@@ -1,45 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import List from './components/git-repo-list/list';
-import withListLoading from './components/git-repo-list/withListLoading';
-import ShoppingList from './components/tut1/shoppingList';
+import UserCardListMedium from './component/card/userlist_m';
+import UserInput from './component/form/inputform';
 
 function App() {
-  const ListLoading = withListLoading(List);
-  const [appState, setAppState] = useState({
-    loading: false,
-    repos: null,
-  });
-  
+   const [users, setUsers] = useState([]);
+   const addCardInList = (user)=>{
+      setUsers([...users, user]);
+    };
 
-  useEffect(() => {
-    setAppState({ loading: true });
-    const apiUrl = `https://api.github.com/users/sanketgupta07/repos`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((repos) => {
-        setAppState({ loading: false, repos: repos });
-      });
-  }, [setAppState]);
-  return (
-    <div className='App'>
-      <div className='container'>
-        <h1>Repo deatils</h1>
+   return (
+    <div className="App">
+      <header className="App-header">
+        Github - User Cards
+        <UserInput onSubmit={addCardInList}/>
+        <UserCardListMedium users={users}/>
+      </header>
       </div>
-      <div className='repo-container'>
-        <ListLoading isLoading={appState.loading} repos={appState.repos} />
-      </div>
-      <footer>
-        <div className='footer'>
-          Built{' '}
-          <span role='img' aria-label='love'>
-            💚
-          </span>{' '}
-          with by Sanket
-          <ShoppingList name="Sanket" />
-        </div>
-      </footer>
-    </div>
   );
 }
+
 export default App;
