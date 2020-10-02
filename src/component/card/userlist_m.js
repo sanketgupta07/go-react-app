@@ -5,7 +5,7 @@ function UserCardListMedium (params) {
     return (
         <div>
             {/* map the array of data to user and return UserCard with spred of user */}
-            {params.users.map(user => <UserCardMedium key={Math.random()} {...user}/>)}
+            {params.users.map(user => <UserCardMedium key={user.id} {...user}/>)}
         </div>
     );    
 }
