@@ -18,11 +18,13 @@ function UserInput(params) {
             {/* <input type="text" placeholder="Github login" ref={login}/> */}
             <input 
             type="text" 
-            placeholder="Github login" 
+            placeholder="Github Username" 
             value={login}
             onChange={event => setLogin(event.target.value) }
+            className="mr-sm-2 mb-2"
+            required
             />
-            <button>Add Card</button>
+            <button variant="primary">Add Card</button>
         </form>
     );
 }

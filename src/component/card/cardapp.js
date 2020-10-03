@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './App.css';
-import UserCardListMedium from './component/card/userlist_m';
-import UserInput from './component/form/inputform';
+import UserInput from '../form/inputform';
+import UserCardListMedium from './userlist_m';
 
-function App() {
+export default function CardApp() {
    const [users, setUsers] = useState([]);
    const addCardInList = (user)=>{
       setUsers([...users, user]);
     };
 
    return (
-    <div className="App">
+    
       <header className="App-header">
         Github - User Cards
         <UserInput onSubmit={addCardInList}/>
         <UserCardListMedium users={users}/>
       </header>
-      </div>
   );
 }
 
-export default App;
