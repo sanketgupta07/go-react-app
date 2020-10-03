@@ -8,6 +8,9 @@ export default function AppNav() {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand to="home">React-Learn</Navbar.Brand>
         <Nav className="mr-auto">
+          <Link className="nav-link" to="home">
+            Home
+          </Link>
           <Link className="nav-link" to="counterBtn">
             Counter
           </Link>
