@@ -5,7 +5,7 @@ export default function Home(params) {
   return (
     <header className="App-header">
       <p>
-        React Sample Application for my learning
+        React apps for my learning
         <br />
         <ul>
           <li>
@@ -18,9 +18,7 @@ export default function Home(params) {
             <Link to="stars-game">Stars Game</Link>
           </li>
           <li>
-            <Link className="nav-link" to="git-repo-list">
-              My Git Repos
-            </Link>
+            <Link to="git-repo-list">My Git Repos</Link>
           </li>
         </ul>
       </p>

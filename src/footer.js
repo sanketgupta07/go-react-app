@@ -10,7 +10,7 @@ export default function AppFooter(params) {
         rel="noopener noreferrer"
       >
         {" "}
-        Give our repo a star.
+        Give my repo a star.
         <div className="github-star-badge">
           <svg
             className="material-icons"
