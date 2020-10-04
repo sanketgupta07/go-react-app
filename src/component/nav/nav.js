@@ -21,16 +21,12 @@ export default function AppNav() {
             Stars Game
           </Link>
           <Link className="nav-link" to="git-repo-list">
-            My Git Repos
+            Git Repos
           </Link>
           <Link className="nav-link" to="about">
             AboutUs
           </Link>
         </Nav>
-        {/* <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-            </Form> */}
       </Navbar>
     </>
   );

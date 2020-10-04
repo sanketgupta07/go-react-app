@@ -1,14 +1,16 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 
 function UserCardMedium(props) {
   return (
-    <div className="github-profile">
-      <img src={props.avatar_url} className="img-m" alt="avatar" />
-      <div className="info">
-        <div className="name">{props.name}</div>
-        <div className="card-m-details">{props.login}</div>
-      </div>
-    </div>
+    <Card bg="dark" text="white" style={{ width: "15rem" }}>
+      <Card.Header>{props.login}</Card.Header>
+      <Card.Img variant="top" src={props.avatar_url} />
+      <Card.Body>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>{props.bio}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

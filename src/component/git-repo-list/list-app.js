@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import UserInput from "../form/inputform";
 import List from "./list";
 import WithListLoading from "./withListLoading";
 function GitListApp() {
@@ -6,22 +7,25 @@ function GitListApp() {
   const [appState, setAppState] = useState({
     loading: false,
     repos: null,
+    user: null,
   });
 
-  useEffect(() => {
+  const getRepos = async (login) => {
     setAppState({ loading: true });
-    const apiUrl = `https://api.github.com/users/sanketgupta07/repos`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((repos) => {
-        setAppState({ loading: false, repos: repos });
-      });
-  }, [setAppState]);
+    const resp = await fetch(`https://api.github.com/users/${login}/repos`);
+    const data = await resp.json();
+    setAppState({
+      loading: false,
+      repos: data,
+      user: login,
+    });
+  };
+
   return (
     <div className="App-header">
-      <div className="container">
-        <h1>Repo deatils</h1>
-      </div>
+      {appState.user == null ? "" : `${appState.user}'s`} Repo deatils
+      <br />
+      <UserInput onSubmit={getRepos} text="Get Repos" />
       <div className="repo-container">
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>

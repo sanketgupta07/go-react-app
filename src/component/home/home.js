@@ -1,12 +1,16 @@
 import React from "react";
+import { Jumbotron } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Home(params) {
   return (
     <header className="App-header">
-      <p>
-        React apps for my learning
-        <br />
+      <Jumbotron style={{ backgroundColor: "transparent" }}>
+        <h1>Hello, world!</h1>
+        <p>
+          This is react.js practice application, I have built some of the apps
+          after learning react.js
+        </p>
         <ul>
           <li>
             <Link to="counterBtn">Counter</Link>
@@ -21,7 +25,7 @@ export default function Home(params) {
             <Link to="git-repo-list">My Git Repos</Link>
           </li>
         </ul>
-      </p>
+      </Jumbotron>
     </header>
   );
 }
